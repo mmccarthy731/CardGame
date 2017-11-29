@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Cards";
+}
+<script type="text/javascript">
+    var numToDraw = 5;
+    function getNumber() {
+        if()
+    }
+</script>
+<h2>Your Cards:</h2>
+
+<div class="container">
+    <div class="row align-items-center">
+    @for (int i = 0; i < ViewBag.Cards.Count; i++)
+    {
+        <div class="col-md-4">
+             <div class="panel panel-primary">
+                  <div class="panel-heading">@ViewBag.Cards[i].value OF @ViewBag.Cards[i].suit</div>
+                  <div class="panel-body">
+                      <img src="@ViewBag.Cards[i].image" /><br />
+                      <select name="KeepCard">
+                          <option value="Discard">Discard</option>
+                          <option value="KeepCard">Keep Card</option>
+                      </select>
+                  </div>
+             </div>
+        </div>
+    }
+    </div>
+    <a href="/Home/Redraw?KeepCard=" class="btn btn-default">Re-Draw</a>
+</div>
+
